@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <title>LifeSpot</title>
 </head>
 <body>
-    <p>Приветствуем на LifeSpot!</p>
+    <header>
+        <div id="header-index">
+            <h1>LifeSpot — прямые трансляции с улиц</h1>
+            <p>Покажем, что происходит прямо сейчас</p>
+        </div>
+    </header>
+    <main>
+        <!--Видео с трансляциями-->
+        <div class="video-container">
+            <iframe height="320" src="https://www.youtube.com/embed/YT2-W5Sddew" title="Москва онлайн камера" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe height="320" src="https://www.youtube.com/embed/h2HXup8nA1I" title="Times Square: 1540 Broadway View Live" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe height="320" src="https://www.youtube.com/embed/JplMzss6_YE" title="London Bus Ride 🇬🇧 - ENTERING EVERY BUS - Empty London Lockdown Tour - London Live" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <!--Кнопка поиска-->
+        <div class="search-container">
+            <form action="https://www.youtube.com/results" method="get" target="_blank">
+                <input type="text" name="search_query" placeholder="Поиск видео на YouTube">
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+    </main>
+    <aside id="sidebar">
+        <div class="navbar">
+            <a href="/">Все трансляции</a>
+            <a href="/">О проекте</a>
+        </div>
+    </aside>
+    <footer>
+        <p>LifeSpot - все права защищены</p>
+        <a href="mailto:contact@lifespot.ru">contact@lifespot.ru</a>
+    </footer>
 </body>
 </html>
