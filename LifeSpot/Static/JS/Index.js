@@ -1,0 +1,1 @@
+alert("Приветствуем на LifeSpot.\nСегодня: " + new Date().toLocaleString());
