@@ -18,3 +18,13 @@ if (age >= 18) {
     alert('Наши трансляции не предназначены для лиц моложе 18 лет!');
     window.location.replace('https://google.com');
 }
+
+let userData = new Map();
+userData.set('userAge', age);
+userData.set('sessionDate', new Date().toLocaleString());
+userData.set('UserAgent', window.navigator.userAgent);
+
+// Исправляем синтаксис цикла for...of
+for (let [key, value] of userData) {
+    console.log(key + ': ' + value);
+}
