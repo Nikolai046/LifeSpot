@@ -99,7 +99,7 @@ iframe {
     border-radius: 4px;
 }
 
-.search-container button {
+button {
     padding: 0.5rem 1rem;
     background-color: #f0f0f0;
     border: none;
@@ -109,6 +109,6 @@ iframe {
     transition: background-color 0.3s;
 }
 
-.search-container button:hover {
+button:hover {
     background-color: #e0e0e0;
 }

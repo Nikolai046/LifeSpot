@@ -1,7 +1,7 @@
 
 let age;
 let userData = new Map();
-checkAge();
+//checkAge();
 handleSession();
 sessionLog();
 
