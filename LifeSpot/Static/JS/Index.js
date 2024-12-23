@@ -1,4 +1,3 @@
-
 let age;
 let userData = new Map();
 //checkAge();
@@ -38,12 +37,11 @@ function sessionLog() {
     }
 }
 
-
 //const inputData = function () {
 //    return document.getElementsByTagName('input')[0].value;
 //}
 const inputData = function () {
-return document.getElementById("myInput").value;
+    return document.getElementById("myInput").value;
 }
 
 function filterContent() {
@@ -52,5 +50,4 @@ function filterContent() {
         const videoDescription = elements[i].getElementsByTagName('p')[0].innerText.toLowerCase();
         elements[i].style.display = videoDescription.includes(inputData()) ? 'block' : 'none';
     }
-
 }
