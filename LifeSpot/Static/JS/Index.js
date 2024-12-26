@@ -1,11 +1,14 @@
-let age;
-let userData = new Map();
+//let age;
+//let userData;
 //checkAge();
-handleSession();
+if (!sessionStorage.getItem("Возраст пользователя")) {
+    handleSession();
+}
 sessionLog();
 
 setTimeout(() => alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!"), 30000);
 function checkAge() {
+    let age;
     while (true) {
         age = prompt("Пожалуйста введите ваш возраст");
         age = parseInt(age); // Преобразуем введённое значение в число
@@ -16,30 +19,27 @@ function checkAge() {
             alert("Пожалуйста, введите корректное число!");
         }
     }
-    userData.set("userAge", age);
     if (age >= 18) {
         alert("Приветствуем на LifeSpot");
     } else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет!");
         window.location.replace("https://google.com");
     }
+    return age;
 }
 
 function handleSession() {
-    userData.set("userAge", age);
-    userData.set("sessionDate", new Date().toLocaleString());
-    userData.set("UserAgent", window.navigator.userAgent);
+    sessionStorage.setItem("Возраст пользователя", checkAge());
+    sessionStorage.setItem("Начало сессии", new Date().toLocaleString());
+    sessionStorage.setItem("Данные пользователя", navigator.userAgent);
 }
 
 function sessionLog() {
-    for (let [key, value] of userData) {
-        console.log(key + ": " + value);
+    for (let key in sessionStorage) {
+        if (sessionStorage.hasOwnProperty(key)) console.log(key + ': ' + sessionStorage[key]);
     }
 }
 
-//const inputData = function () {
-//    return document.getElementsByTagName('input')[0].value;
-//}
 const inputData = function () {
     return document.getElementById("myInput").value;
 }
