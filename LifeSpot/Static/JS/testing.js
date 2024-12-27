@@ -1,17 +1,22 @@
-<script>
-    window.addEventListener("load", function() {
-        let userName = prompt("Пожалуйста, введите ваше имя");
-    alert(`Приветствуем, ${userName}. В вашем имени ${userName.length} символов`);
 
-    // Перемещаем создание Map внутрь обработчика события,
-    // чтобы переменная userName была доступна
-    let userData = new Map();
+    window.addEventListener("load", function() {
+    const userName = prompt("Пожалуйста, введите ваше имя");
+    alert(`Приветствуем, ${userName}. В вашем имени ${userName.length} символов`);
+    const userData = new Map();
     userData.set("Name", userName);
     userData.set("UserAgent", window.navigator.userAgent);
-
-    // Исправляем синтаксис цикла for...of
     for (let [key, value] of userData) {
         console.log(key + ": " + value);
         }
     });
-</script >
+
+    const saveInput = function () {
+        // Вытащим значение текстового поля (как у нас уже делается при фильтрации)
+        const currentInput = document.getElementsByTagName("input")[0].value.toLowerCase();
+
+        // Покажем окно с прошлым и новым значением
+        alert(`Последний ввод: ${this.lastInput}\nТекущий ввод: ${currentInput}`);
+
+        // Сохраним новое значение в контекст
+        this.lastInput = currentInput;
+    }
