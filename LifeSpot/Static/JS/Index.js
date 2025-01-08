@@ -6,7 +6,7 @@ if (!sessionStorage.getItem("Возраст пользователя")) {
 }
 sessionLog();
 
-setTimeout(() => alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!"), 30000);
+setTimeout(() => alert("Нравится LifeSpot? " + "\n" + "Подпишитесь на наш Instagram @lifespot999!"), 30000);
 function checkAge() {
     let age;
     while (true) {
@@ -36,7 +36,7 @@ function handleSession() {
 
 function sessionLog() {
     for (let key in sessionStorage) {
-        if (sessionStorage.hasOwnProperty(key)) console.log(key + ': ' + sessionStorage[key]);
+        if (sessionStorage.hasOwnProperty(key)) console.log(key + ": " + sessionStorage[key]);
     }
 }
 
@@ -45,9 +45,9 @@ const inputData = function () {
 }
 
 function filterContent() {
-    const elements = document.querySelectorAll('.video-container > div');
+    const elements = document.querySelectorAll(".video-container > div");
     for (let i = 0; i < elements.length; i++) {
-        const videoDescription = elements[i].getElementsByTagName('p')[0].innerText.toLowerCase();
-        elements[i].style.display = videoDescription.includes(inputData()) ? 'block' : 'none';
+        const videoDescription = elements[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+        elements[i].style.display = videoDescription.includes(inputData()) ? "block" : "none";
     }
 }

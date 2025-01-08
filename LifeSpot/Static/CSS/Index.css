@@ -7,6 +7,7 @@
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    background-color: #9d9d9d;
 }
 
 header, footer {
@@ -47,13 +48,13 @@ main {
     }
 
     .video-container div p {
-        margin: 0; /* Совсем маленький отступ */
+        margin: 0;
     }
 
 iframe {
-    width: 100%; /* Измените width на 100% */
-    height: auto; /* Сохраняет пропорции */
-    aspect-ratio: 16 / 9; /* Поддерживает соотношение сторон 16:9 */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
@@ -117,7 +118,8 @@ button {
 
 .review {
     background-color: #9D9D9D;
-    padding-left: 200px;
+    margin-left: 170px;
+    padding-left: 30px;
     padding-bottom: 20px;
 }
 
@@ -144,3 +146,75 @@ button {
 .review-content {
     color: #333;
 }
+
+/*************************************************************/
+/************      ДЗ HW-03    *******************************/
+/*************************************************************/
+
+.carousel-container {
+    position: relative;
+    width: 100%; /* Карусель занимает всю ширину контейнера */
+    overflow: hidden; /* Скрывает изображения, которые выходят за пределы контейнера */
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Плавная анимация при перемещении */
+    touch-action: none;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .carousel-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; /* Обеспечивает заполнение картинки внутри контейнера */
+    }
+
+button.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(157, 157, 157, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+}
+
+    button.carousel-button:hover {
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(157, 157, 157, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .carousel-indicator.active {
+        background-color: rgba(220, 220, 220, 1); /* Цвет активного индикатора */
+    }
